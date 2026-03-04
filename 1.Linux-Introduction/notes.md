@@ -65,4 +65,120 @@ Responsibilities of the kernel:
 - Device control
 
 Structure:
+Applications
+↓
+Shell
+↓
+Kernel
+↓
+Hardware
+
+
+---
+
+## Linux Distributions
+
+A **Linux distribution (distro)** is a complete operating system built around the Linux kernel.
+
+Popular Linux distributions:
+
+- Ubuntu
+- Debian
+- CentOS
+- Rocky Linux
+- Red Hat Enterprise Linux (RHEL)
+- Fedora
+
+Each distribution includes:
+
+- Linux kernel
+- Package manager
+- System tools
+- Desktop environment (optional)
+
+---
+
+## Why Linux is Important
+
+Linux is widely used in modern IT infrastructure.
+
+Reasons for its popularity:
+
+- Open source
+- Highly secure
+- Stable and reliable
+- Efficient resource usage
+- Large community support
+
+---
+
+## Where Linux is Used
+
+Linux powers many technologies used today:
+
+Cloud Platforms
+- AWS
+- Azure
+- Google Cloud
+
+DevOps Tools
+- Docker
+- Kubernetes
+- Jenkins
+- Ansible
+- Terraform
+
+Other Systems
+- Web servers
+- Databases
+- Supercomputers
+- Android smartphones
+
+---
+
+## Linux vs Windows
+
+| Feature | Linux | Windows |
+|------|------|------|
+| Source Code | Open Source | Proprietary |
+| Cost | Free | Paid License |
+| Security | High | Moderate |
+| Performance | Efficient | Resource-heavy |
+| Server Usage | Very Common | Less common |
+
+---
+
+## Linux Command Line
+
+Linux is primarily operated using the **command line interface (CLI)**.
+
+Example commands:
+pwd
+whoami
+date
+uname -a
+
+
+
+The command line allows users to perform powerful system operations efficiently.
+
+---
+
+## Summary
+
+In this section we learned:
+
+- What Linux is
+- History of Linux
+- Linux kernel
+- Linux distributions
+- Why Linux is important
+- Where Linux is used
+- Basic Linux commands
+
+---
+
+## Next Topic
+
+➡ **Linux Installation**
 
