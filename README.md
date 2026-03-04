@@ -46,7 +46,3 @@ Linux Zero to Hero Series (The Learning Tree)
 
 ---
 
-## Author
-
-Bhratesh Dhangar  
-DevOps Engineer
