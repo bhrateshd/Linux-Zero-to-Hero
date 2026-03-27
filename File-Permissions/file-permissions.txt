@@ -1,0 +1,150 @@
+
+
+  Owner   Group   Others
+-   ---    ---    ---
+Owner
+Group
+Others
+
+chmod 
+To change the permissions of files or dirs
+
+Syntax	
+	chmod <o/g/o> +/- <file-name>
+	chmod o+x ping.sh
+	chmod 777 ping.sh
+	
+	
+Read (r) = view file/directories
+Write (w) = Allows modifying and editing file, deleting files
+Execute (x) = Alows running the files 
+
+
+Read       4
+Write      2
+Execute    1
+----------------
+RWX        7
+
+
+chown 
+To change the ownership or owner of the files or dirs
+
+Syntax
+	chown <owner-name> <file-name>
+
+
+chgrp 
+To change the group use this command
+
+Syntax	
+	chgrp <Group> <file-name>
+
+
+
+root@BD:~/Bhratesh/Linux-Zero-to-Hero# ll
+total 20
+drwxr-xr-x 4 root root 4096 Mar  4 20:43 ./
+drwxr-xr-x 3 root root 4096 Mar  4 20:32 ../
+drwxr-xr-x 8 root root 4096 Mar  4 20:46 .git/
+drwxr-xr-x 2 root root 4096 Mar  4 20:46 1.Linux-Introduction/
+-rw-r--r-- 1 root root 1039 Mar  4 20:41 README.md
+root@BD:~/Bhratesh/Linux-Zero-to-Hero# cd 1.Linux-Introduction/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# ll
+total 12
+drwxr-xr-x 2 root root 4096 Mar  4 20:46 ./
+drwxr-xr-x 4 root root 4096 Mar  4 20:43 ../
+-rw-r--r-- 1 root root 1254 Mar  4 20:46 notes.md
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# mkdir temp
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# touch ping.sh
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# ll
+total 16
+drwxr-xr-x 3 root root 4096 Mar 27 15:22 ./
+drwxr-xr-x 4 root root 4096 Mar  4 20:43 ../
+-rw-r--r-- 1 root root 1254 Mar  4 20:46 notes.md
+-rw-r--r-- 1 root root    0 Mar 27 15:22 ping.sh
+drwxr-xr-x 2 root root 4096 Mar 27 15:21 temp/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# chmod o+w temp/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# ls -lart
+total 16
+drwxr-xr-x 4 root root 4096 Mar  4 20:43 ..
+-rw-r--r-- 1 root root 1254 Mar  4 20:46 notes.md
+drwxr-xrwx 2 root root 4096 Mar 27 15:21 temp
+-rw-r--r-- 1 root root    0 Mar 27 15:22 ping.sh
+drwxr-xr-x 3 root root 4096 Mar 27 15:22 .
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# chmod o-w temp/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# ll
+total 16
+drwxr-xr-x 3 root root 4096 Mar 27 15:22 ./
+drwxr-xr-x 4 root root 4096 Mar  4 20:43 ../
+-rw-r--r-- 1 root root 1254 Mar  4 20:46 notes.md
+-rw-r--r-- 1 root root    0 Mar 27 15:22 ping.sh
+drwxr-xr-x 2 root root 4096 Mar 27 15:21 temp/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# chmod 777 ping.sh
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# ll
+total 16
+drwxr-xr-x 3 root root 4096 Mar 27 15:22 ./
+drwxr-xr-x 4 root root 4096 Mar  4 20:43 ../
+-rw-r--r-- 1 root root 1254 Mar  4 20:46 notes.md
+-rwxrwxrwx 1 root root    0 Mar 27 15:22 ping.sh*
+drwxr-xr-x 2 root root 4096 Mar 27 15:21 temp/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# chmod 700 ping.sh
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# ll
+total 16
+drwxr-xr-x 3 root root 4096 Mar 27 15:22 ./
+drwxr-xr-x 4 root root 4096 Mar  4 20:43 ../
+-rw-r--r-- 1 root root 1254 Mar  4 20:46 notes.md
+-rwx------ 1 root root    0 Mar 27 15:22 ping.sh*
+drwxr-xr-x 2 root root 4096 Mar 27 15:21 temp/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# chmod 721 ping.sh
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# ll
+total 16
+drwxr-xr-x 3 root root 4096 Mar 27 15:22 ./
+drwxr-xr-x 4 root root 4096 Mar  4 20:43 ../
+-rw-r--r-- 1 root root 1254 Mar  4 20:46 notes.md
+-rwx-w---x 1 root root    0 Mar 27 15:22 ping.sh*
+drwxr-xr-x 2 root root 4096 Mar 27 15:21 temp/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# chown bhratesh ping.sh
+chown: invalid user: ‘bhratesh’
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# chown bhrateshd ping.sh
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# ll
+total 16
+drwxr-xr-x 3 root      root 4096 Mar 27 15:22 ./
+drwxr-xr-x 4 root      root 4096 Mar  4 20:43 ../
+-rw-r--r-- 1 root      root 1254 Mar  4 20:46 notes.md
+-rwx-w---x 1 bhrateshd root    0 Mar 27 15:22 ping.sh*
+drwxr-xr-x 2 root      root 4096 Mar 27 15:21 temp/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# chown bhrateshd temp/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# ll
+total 16
+drwxr-xr-x 3 root      root 4096 Mar 27 15:22 ./
+drwxr-xr-x 4 root      root 4096 Mar  4 20:43 ../
+-rw-r--r-- 1 root      root 1254 Mar  4 20:46 notes.md
+-rwx-w---x 1 bhrateshd root    0 Mar 27 15:22 ping.sh*
+drwxr-xr-x 2 bhrateshd root 4096 Mar 27 15:21 temp/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# chown root temp/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# ll
+total 16
+drwxr-xr-x 3 root      root 4096 Mar 27 15:22 ./
+drwxr-xr-x 4 root      root 4096 Mar  4 20:43 ../
+-rw-r--r-- 1 root      root 1254 Mar  4 20:46 notes.md
+-rwx-w---x 1 bhrateshd root    0 Mar 27 15:22 ping.sh*
+drwxr-xr-x 2 root      root 4096 Mar 27 15:21 temp/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# chown root ping.sh
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# ll
+total 16
+drwxr-xr-x 3 root root 4096 Mar 27 15:22 ./
+drwxr-xr-x 4 root root 4096 Mar  4 20:43 ../
+-rw-r--r-- 1 root root 1254 Mar  4 20:46 notes.md
+-rwx-w---x 1 root root    0 Mar 27 15:22 ping.sh*
+drwxr-xr-x 2 root root 4096 Mar 27 15:21 temp/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# chgrp bhrateshd temp/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# ll
+total 16
+drwxr-xr-x 3 root root      4096 Mar 27 15:22 ./
+drwxr-xr-x 4 root root      4096 Mar  4 20:43 ../
+-rw-r--r-- 1 root root      1254 Mar  4 20:46 notes.md
+-rwx-w---x 1 root root         0 Mar 27 15:22 ping.sh*
+drwxr-xr-x 2 root bhrateshd 4096 Mar 27 15:21 temp/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction# chgrp root temp/
+root@BD:~/Bhratesh/Linux-Zero-to-Hero/1.Linux-Introduction#
